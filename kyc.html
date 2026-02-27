@@ -226,7 +226,13 @@
                             </div>
                             <h2 className="text-3xl font-black mb-4 italic uppercase tracking-tighter">Verified Success</h2>
                             <p className="text-slate-400 mb-10 text-base leading-relaxed">您的認證資料已成功送出。<br/>系統已將資料加密傳送至雲端存儲。</p>
-                            <button onClick={() => window.location.reload()} className="w-full py-5 bg-slate-800 hover:bg-slate-700 text-white rounded-2xl font-bold transition-all uppercase tracking-widest text-sm">回到首頁</button>
+                            {/* 修改處：點擊按鈕跳轉至同目錄下的 index.html */}
+                            <button 
+                                onClick={() => window.location.href = 'index.html'} 
+                                className="w-full py-5 bg-slate-800 hover:bg-slate-700 text-white rounded-2xl font-bold transition-all uppercase tracking-widest text-sm"
+                            >
+                                回到首頁
+                            </button>
                         </div>
                     </div>
                 );
