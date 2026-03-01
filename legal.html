@@ -22,6 +22,14 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        .line-glow {
+            box-shadow: 0 0 15px rgba(6, 199, 85, 0.3);
+            transition: all 0.3s ease;
+        }
+        .line-glow:hover {
+            box-shadow: 0 0 25px rgba(6, 199, 85, 0.5);
+            transform: translateY(-1px);
+        }
         .legal-content h2 {
             font-size: 1.5rem;
             font-weight: 700;
@@ -50,7 +58,7 @@
 <body class="min-h-screen flex flex-col">
 
     <!-- 頂部簡單導航 -->
-      <nav class="sticky top-0 z-50 w-full border-b border-white/5 bg-slate-950/80 backdrop-blur-md">
+    <nav class="sticky top-0 z-50 w-full border-b border-white/5 bg-slate-950/80 backdrop-blur-md">
         <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
             <a href="index.html" class="group flex items-center text-sm text-slate-400 hover:text-white transition-all">
                 <span class="mr-2 transform group-hover:-translate-x-1 transition-transform">←</span>
@@ -63,19 +71,22 @@
                 <svg class="w-3 h-3 mr-1.5 fill-current" viewBox="0 0 24 24"><path d="M24 10.304c0-5.232-5.383-9.488-12-9.488S0 5.072 0 10.304c0 4.689 4.272 8.58 10.038 9.354.391.084.923.258 1.057.592.121.303.079.778.039 1.085l-.171 1.027c-.052.308-.252 1.206 1.089.658 1.341-.548 7.232-4.258 9.873-7.291C23.273 14.195 24 12.35 24 10.304z"/></svg>
                 立即加入社群
             </a>
+        </div>
+    </nav>
 
     <!-- 主要內容區 -->
     <main class="flex-grow max-w-4xl mx-auto w-full px-6 py-12">
         <div id="content-area" class="glass-card rounded-[2rem] p-8 md:p-12 shadow-2xl">
-            <!-- 這裡會由 JavaScript 動態插入內容 -->
             <div id="loading" class="text-center py-20 animate-pulse text-slate-500">載入法律條款中...</div>
         </div>
     </main>
 
-    <!-- 可重複使用的 FOOTER 區塊 (您可以直接複製下方 <footer> 到 index.html) -->
+    <!-- FOOTER 區塊 -->
     <footer class="mt-auto border-t border-white/5 bg-slate-900/50 pt-16 pb-8">
         <div class="max-w-4xl mx-auto px-6">
-               <div class="sm:col-span-2 lg:col-span-1">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
+                <!-- 品牌介紹 & LINE 社群 -->
+                <div class="lg:col-span-1">
                     <div class="flex items-center mb-6">
                         <div class="w-8 h-8 bg-blue-600 rounded-lg mr-3 flex items-center justify-center font-black text-white">日</div>
                         <h4 class="text-white font-bold text-lg tracking-tight">日央水原專業報價</h4>
@@ -84,7 +95,7 @@
                         致力於提供最安全的天幣買賣管道。歡迎加入我們的官方 LINE 社群，獲取第一手優惠資訊與即時市場行情。
                     </p>
                     
-                    <!-- LINE 社群卡片呈現 -->
+                    <!-- LINE 社群卡片 -->
                     <a href="https://line.me/ti/g2/xMOWXSE5Tn0pkhDUAEeILtbSnzSzyBXpD_JVsg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" 
                        target="_blank"
                        class="group block p-4 rounded-2xl border border-[#06C755]/30 bg-[#06C755]/5 hover:bg-[#06C755]/10 transition-all">
@@ -104,25 +115,28 @@
                         </div>
                     </a>
                 </div>
-                <div class="grid grid-cols-2 gap-4 text-sm">
+
+                <!-- 法律資訊與連結 -->
+                <div class="grid grid-cols-2 gap-8 lg:col-span-2">
                     <div>
                         <h4 class="text-slate-500 font-bold mb-4 uppercase tracking-widest text-xs">法律資訊</h4>
-                        <ul class="space-y-2">
-                           <li><a href="./legal.html?page=terms" class="text-slate-400 hover:text-blue-400 transition-colors">服務條款</a></li>
-                           <li><a href="./legal.html?page=risk" class="text-slate-400 hover:text-blue-400 transition-colors">風險揭露</a></li>
-                           <li><a href="./legal.html?page=privacy" class="text-slate-400 hover:text-blue-400 transition-colors">隱私權政策</a></li>
-                           <li><a href="./legal.html?page=aml" class="text-slate-400 hover:text-blue-400 transition-colors">反洗錢聲明</a></li>
+                        <ul class="space-y-3">
+                           <li><a href="?page=terms" class="text-slate-400 hover:text-blue-400 transition-colors text-sm">服務條款</a></li>
+                           <li><a href="?page=risk" class="text-slate-400 hover:text-blue-400 transition-colors text-sm">風險揭露</a></li>
+                           <li><a href="?page=privacy" class="text-slate-400 hover:text-blue-400 transition-colors text-sm">隱私權政策</a></li>
+                           <li><a href="?page=aml" class="text-slate-400 hover:text-blue-400 transition-colors text-sm">反洗錢聲明</a></li>
                         </ul>
                     </div>
                     <div>
                         <h4 class="text-slate-500 font-bold mb-4 uppercase tracking-widest text-xs">快速連結</h4>
-                        <ul class="space-y-2">
-                            <li><a href="index.html" class="text-slate-400 hover:text-blue-400 transition-colors">即時報價</a></li>
-                            <li><a href="kyc.html" class="text-slate-400 hover:text-blue-400 transition-colors">實名認證</a></li>
+                        <ul class="space-y-3">
+                            <li><a href="index.html" class="text-slate-400 hover:text-blue-400 transition-colors text-sm">即時報價</a></li>
+                            <li><a href="kyc.html" class="text-slate-400 hover:text-blue-400 transition-colors text-sm">實名認證</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
+
             <div class="border-t border-white/5 pt-8 text-center">
                 <div class="text-[10px] text-slate-600 font-bold tracking-[0.2em] uppercase">
                     © 2026 日央水原 • 專業天幣買賣與 DD373 代購首選 • 謹防詐騙 • 請認明官方 LINE @321enghh
