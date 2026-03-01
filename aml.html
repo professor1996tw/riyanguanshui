@@ -78,10 +78,10 @@
                     <div>
                         <h4 class="text-slate-500 font-bold mb-4 uppercase tracking-widest text-xs">法律資訊</h4>
                         <ul class="space-y-2">
-                           <li><a href="/terms.html" class="text-slate-400 hover:text-blue-400 transition-colors">服務條款</a></li>
-                           <li><a href="/risk.html" class="text-slate-400 hover:text-blue-400 transition-colors">風險揭露</a></li>
-                           <li><a href="/privacy.html" class="text-slate-400 hover:text-blue-400 transition-colors">隱私權政策</a></li>
-                           <li><a href="/aml.html" class="text-slate-400 hover:text-blue-400 transition-colors">反洗錢聲明</a></li>
+                           <li><a href="terms.html" class="text-slate-400 hover:text-blue-400 transition-colors">服務條款</a></li>
+                           <li><a href="risk.html" class="text-slate-400 hover:text-blue-400 transition-colors">風險揭露</a></li>
+                           <li><a href="privacy.html" class="text-slate-400 hover:text-blue-400 transition-colors">隱私權政策</a></li>
+                           <li><a href="aml.html" class="text-slate-400 hover:text-blue-400 transition-colors">反洗錢聲明</a></li>
                         </ul>
                     </div>
                     <div>
@@ -209,8 +209,8 @@
 
         function renderContent() {
             const urlParams = new URLSearchParams(window.location.search);
-            const page = urlParams.get('page') || 'terms';
-            const data = legalData[page] || legalData.terms;
+            const page = urlParams.get('page') || 'aml';
+            const data = legalData[page] || legalData.aml;
             
             const area = document.getElementById('content-area');
             area.innerHTML = `
