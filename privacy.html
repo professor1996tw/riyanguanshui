@@ -209,8 +209,8 @@
 
         function renderContent() {
             const urlParams = new URLSearchParams(window.location.search);
-            const page = urlParams.get('page') || 'terms';
-            const data = legalData[page] || legalData.terms;
+            const page = urlParams.get('page') || 'privacy';
+            const data = legalData[page] || legalData.privacy;
             
             const area = document.getElementById('content-area');
             area.innerHTML = `
