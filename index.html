@@ -415,21 +415,26 @@
                             </div>
                         </div>
 
+                       {/* 報價表格區塊 */}
                         <div className="glass-morphism rounded-[2.5rem] shadow-2xl overflow-hidden mb-16 border-white/5">
-                            <div className="grid grid-cols-2 bg-slate-900/80 p-6 text-[10px] font-black text-slate-400 uppercase tracking-widest border-b border-white/5">
-                                <div className="flex items-center gap-1.5"><Icon name="globe" size={14}/> 伺服器頻道</div>
-                                <div className="text-right flex items-center justify-end gap-1.5"><Icon name="trending" size={14}/> 當前天幣匯率 (TWD)</div>
+                            <div className="grid grid-cols-2 bg-slate-900/80 p-6 text-[10px] font-black text-slate-500 uppercase tracking-widest border-b border-white/5">
+                                <div className="flex items-center gap-1.5"><Icon name="globe" size={14}/> 伺服器類別與頻道</div>
+                                <div className="text-right flex items-center justify-end gap-1.5"><Icon name="trending" size={14}/> 當前匯率 (TWD)</div>
                             </div>
+                            
                             <div className="divide-y divide-white/[0.03]">
-                                {rates.length > 0 ? rates.map((item, idx) => (
-                                    <div key={idx} className="grid grid-cols-2 p-6 items-center hover:bg-white/[0.02] transition-colors">
-                                        <div className="text-slate-200 font-bold">{item.name}</div>
-                                        <div className="text-right"><span className="text-2xl font-black text-blue-400 tracking-tight">{item.value}</span></div>
-                                    </div>
-                                )) : <div className="p-12 text-center text-slate-600 font-bold text-xs uppercase tracking-widest animate-pulse">正在獲取日央水原實時報價...</div>}
-                            </div>
-                        </div>
-
+                                {rates.length > 0 ? (
+                                    <React.Fragment>
+                                        {/* Classic Lineage Category */}
+                                        <div className="category-header px-6 py-4 flex items-center">
+                                            <span className="text-blue-400 font-black text-sm tracking-tight">天堂經典版伺服器頻道</span>
+                                        </div>
+                                        {classicRates.map((item, idx) => (
+                                            <div key={`classic-${idx}`} className="grid grid-cols-2 p-6 items-center hover:bg-white/[0.02] transition-colors">
+                                                <div className="text-slate-300 font-bold">{item.name}</div>
+                                                <div className="text-right"><span className="text-2xl font-black text-blue-400 tracking-tight">{item.value}</span></div>
+                                            </div>
+                                        
                         {/* DD373 代購區塊 */}
                         <div className="dd373-card-v2 p-8 md:p-12 mb-8 flex flex-col md:flex-row items-center md:items-start gap-10 relative overflow-hidden group">
                             <div className="absolute top-10 right-10 text-white/[0.03] pointer-events-none group-hover:text-blue-500/10 transition-colors">
